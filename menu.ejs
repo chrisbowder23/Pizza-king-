@@ -1,0 +1,16 @@
+<% layout('layout', { location }) %>
+<h2>Menu</h2>
+<% Object.keys(byCat).forEach(cat => { %>
+  <h3><%= cat %></h3>
+  <ul class="menu-list">
+    <% byCat[cat].forEach(item => { %>
+      <li class="menu-item">
+        <div>
+          <div class="name"><%= item.name %></div>
+          <% if (item.description) { %><div class="desc"><%= item.description %></div><% } %>
+        </div>
+        <div class="price">$<%= currencyFromCents(item.price_cents) %></div>
+      </li>
+    <% }) %>
+  </ul>
+<% }) %>

@@ -1,0 +1,14 @@
+<% layout('layout', { location, title: 'Order' }) %>
+<style>
+.webview-wrap { position: relative; height: calc(100vh - 160px); }
+.webview { width: 100%; height: 100%; border: 0; }
+.notice { background:#fff7e6; padding:.6rem .8rem; border:1px solid #ffd28a; border-radius:6px; margin-bottom:.6rem; }
+</style>
+
+<div class="notice">
+  Orders placed here print at the store just like the website.
+</div>
+
+<div class="webview-wrap">
+  <iframe class="webview" src="<%= process.env.ORDER_URL %>" title="Order Online"></iframe>
+</div>

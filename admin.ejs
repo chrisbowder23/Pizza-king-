@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Admin — Orders</title>
+<link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+<div class="container">
+  <h2>Recent Orders</h2>
+  <table class="orders">
+    <thead><tr><th>ID</th><th>When</th><th>Customer</th><th>Phone</th><th>Total</th><th>Items</th></tr></thead>
+    <tbody>
+      <% orders.forEach(o => { const items = JSON.parse(o.items_json); %>
+        <tr>
+          <td><%= o.id %></td>
+          <td><%= new Date(o.created_at).toLocaleString() %></td>
+          <td><%= o.customer_name %></td>
+          <td><%= o.phone %></td>
+          <td>$<%= currencyFromCents(o.total_cents) %></td>
+          <td>
+            <ul>
+            <% items.forEach(i => { %>
+              <li><%= i.qty %>× <%= i.name %> ($<%= (i.price_cents/100).toFixed(2) %>)</li>
+            <% }) %>
+            </ul>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

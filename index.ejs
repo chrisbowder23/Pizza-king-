@@ -1,0 +1,15 @@
+<% layout('layout', { location }) %>
+<section class="hero">
+  <h2>Hot. Fresh. Local.</h2>
+  <p>Order online for pickup at our Converse, Indiana location.</p>
+  <p class="cta-row">
+    <a class="btn" href="/order">Start Order</a>
+    <a class="btn outline" href="/menu">View Menu</a>
+  </p>
+</section>
+
+<section>
+  <h3>Where to find us</h3>
+  <p><strong>Address:</strong> <%= location.address %><br>
+     <strong>Phone:</strong> <%= location.phone %></p>
+</section>

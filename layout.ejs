@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= title || 'Pizza King — Converse' %></title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>🍕 Pizza King — Converse</h1>
+    </div>
+  </header>
+
+  <main class="container" style="padding-bottom:78px">
+    <%- body %>
+  </main>
+
+  <nav class="tabbar">
+    <a href="/" class="tab">Home</a>
+    <a href="/menu" class="tab">Menu</a>
+    <a href="/order" class="tab tab-primary">Order</a>
+    <a href="/contact" class="tab">Contact</a>
+    <a href="/status" class="tab">Status</a>
+  </nav>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
